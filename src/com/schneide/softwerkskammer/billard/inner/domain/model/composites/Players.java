@@ -3,6 +3,7 @@ package com.schneide.softwerkskammer.billard.inner.domain.model.composites;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 
 import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Player;
 
@@ -33,6 +34,10 @@ public class Players implements Iterator<Player> {
 
 	private Player playerAt(int index) {
 		return this.asList.get(index % 2);
+	}
+
+	public void forEach(Consumer<Player> operation) {
+		this.asList.forEach(operation);
 	}
 
 	public Player first() {

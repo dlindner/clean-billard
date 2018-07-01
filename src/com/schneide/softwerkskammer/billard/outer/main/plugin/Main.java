@@ -2,9 +2,12 @@ package com.schneide.softwerkskammer.billard.outer.main.plugin;
 
 import java.util.Random;
 
-import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Players;
-import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Player;
 import com.schneide.softwerkskammer.billard.inner.usecase.Match;
+import com.schneide.softwerkskammer.billard.inner.usecase.requirements.GameNarrator;
+import com.schneide.softwerkskammer.billard.inner.usecase.requirements.PlayerRecruiter;
+import com.schneide.softwerkskammer.billard.outer.database.player.adapter.PlayerFromDatabase;
+import com.schneide.softwerkskammer.billard.outer.database.player.plugin.HardcodedNames;
+import com.schneide.softwerkskammer.billard.outer.gui.plugin.ConsoleDisplay;
 
 public final class Main {
 
@@ -14,18 +17,14 @@ public final class Main {
 
 	public static void main(String[] arguments) throws InterruptedException {
 		final Random randomness = createRandomnessFor(arguments);
-		final Players players = new Players(
-				Player.randomBy(randomness),
-				Player.randomBy(randomness));
-		Match someMatch = Match.startFor(players);
-		someMatch.play();
 
-//		boolean gameCommences = true;
-//		while (gameCommences) {
-//			gameCommences = game.turn();
-//			Thread.sleep(2000L);
-//			System.out.println("-----");
-//		}
+		final PlayerRecruiter playerPool = new PlayerFromDatabase(
+				new HardcodedNames(randomness),
+				randomness);
+		final GameNarrator display = new ConsoleDisplay();
+
+		Match someMatch = Match.startWith(playerPool, display);
+		someMatch.play();
 	}
 
 	private static Random createRandomnessFor(String[] arguments) {

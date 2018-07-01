@@ -17,9 +17,13 @@ public final class Ball {
 		return this.suit.equals(required);
 	}
 
+	public String denotation() {
+		return "Ball " + this.number + " (" + this.suit + ")";
+	}
+
 	@Override
 	public String toString() {
-		return "Ball " + this.number + " (" + this.suit + ")";
+		return denotation();
 	}
 
 	public static Ball createFor(int number) {

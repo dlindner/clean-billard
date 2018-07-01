@@ -1,5 +1,7 @@
 package com.schneide.softwerkskammer.billard.inner.domain.model.rules;
 
+import java.util.stream.StreamSupport;
+
 import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Ball;
 import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Suit;
 
@@ -13,29 +15,27 @@ public class BillardRules {
 			Suit playerSuit,
 			Iterable<Ball> pocketedBalls,
 			int remainingBalls) {
-		if (!pocketedBalls.iterator().hasNext()) {
+		if (isEmpty(pocketedBalls)) {
 			return resultFor(GameState.ongoing, NextPlayer.change);
 		}
-		if (0 == remainingBalls) {
-			return resultFor(GameState.won, NextPlayer.change);
+		if (contains(Suit.black, pocketedBalls)) {
+			return resultFor(
+					(remainingBalls < 2) ? GameState.won : GameState.lost,
+					NextPlayer.change);
 		}
-//		player Ludwig pockets [Ball 1 (full)]
-//				The game is ongoing with 14 balls on the table
-//				-----
-//				player Ludwig pockets [Ball 12 (half), Ball 8 (black)]
-//				The game is ongoing with 12 balls on the table
-
-
-		for (Ball each : pocketedBalls) {
-			if (each.hasSuit(Suit.black)) {
-				return resultFor(GameState.lost, NextPlayer.change);
-			}
-			if (each.hasSuit(Suit.white)
-					|| !each.hasSuit(playerSuit)) {
-				return resultFor(GameState.ongoing, NextPlayer.change);
-			}
+		if (contains(Suit.white, pocketedBalls)
+				|| contains(playerSuit.other(), pocketedBalls)) {
+			return resultFor(GameState.ongoing, NextPlayer.change);
 		}
 		return resultFor(GameState.ongoing, NextPlayer.stay);
+	}
+
+	private boolean isEmpty(Iterable<Ball> pocketedBalls) {
+		return !pocketedBalls.iterator().hasNext();
+	}
+
+	private boolean contains(Suit required, Iterable<Ball> balls) {
+		return StreamSupport.stream(balls.spliterator(), false).anyMatch(b -> b.hasSuit(required));
 	}
 
 	private StrikeResult resultFor(
