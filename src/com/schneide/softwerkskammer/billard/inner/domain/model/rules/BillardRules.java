@@ -1,7 +1,7 @@
-package com.schneide.softwerkskammer.billard.inner.domain.engine.rules;
+package com.schneide.softwerkskammer.billard.inner.domain.model.rules;
 
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Ball;
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Suit;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Ball;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Suit;
 
 public class BillardRules {
 

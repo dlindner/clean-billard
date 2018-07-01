@@ -1,9 +1,9 @@
-package com.schneide.softwerkskammer.billard.inner.domain.engine;
+package com.schneide.softwerkskammer.billard.inner.usecase;
 
-import com.schneide.softwerkskammer.billard.inner.domain.engine.rules.BillardRules;
-import com.schneide.softwerkskammer.billard.inner.domain.model.composite.Game;
-import com.schneide.softwerkskammer.billard.inner.domain.model.composite.Players;
-import com.schneide.softwerkskammer.billard.inner.domain.model.composite.Table;
+import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Game;
+import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Players;
+import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Table;
+import com.schneide.softwerkskammer.billard.inner.domain.model.rules.BillardRules;
 
 public class Match {
 

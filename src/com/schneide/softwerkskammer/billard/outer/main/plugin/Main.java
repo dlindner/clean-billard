@@ -2,9 +2,9 @@ package com.schneide.softwerkskammer.billard.outer.main.plugin;
 
 import java.util.Random;
 
-import com.schneide.softwerkskammer.billard.inner.domain.engine.Match;
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Player;
-import com.schneide.softwerkskammer.billard.inner.domain.model.composite.Players;
+import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Players;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Player;
+import com.schneide.softwerkskammer.billard.inner.usecase.Match;
 
 public final class Main {
 

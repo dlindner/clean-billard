@@ -1,14 +1,14 @@
-package com.schneide.softwerkskammer.billard.inner.domain.model.composite;
+package com.schneide.softwerkskammer.billard.inner.domain.model.composites;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.schneide.softwerkskammer.billard.inner.domain.engine.rules.BillardRules;
-import com.schneide.softwerkskammer.billard.inner.domain.engine.rules.GameState;
-import com.schneide.softwerkskammer.billard.inner.domain.engine.rules.StrikeResult;
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Ball;
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Player;
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Suit;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Ball;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Player;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Suit;
+import com.schneide.softwerkskammer.billard.inner.domain.model.rules.BillardRules;
+import com.schneide.softwerkskammer.billard.inner.domain.model.rules.GameState;
+import com.schneide.softwerkskammer.billard.inner.domain.model.rules.StrikeResult;
 
 public class Game {
 

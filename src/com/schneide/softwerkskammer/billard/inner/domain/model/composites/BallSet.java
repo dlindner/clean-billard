@@ -1,10 +1,10 @@
-package com.schneide.softwerkskammer.billard.inner.domain.model.composite;
+package com.schneide.softwerkskammer.billard.inner.domain.model.composites;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Ball;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Ball;
 
 public class BallSet implements Iterable<Ball> {
 

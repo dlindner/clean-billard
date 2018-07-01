@@ -1,10 +1,10 @@
-package com.schneide.softwerkskammer.billard.inner.domain.model.composite;
+package com.schneide.softwerkskammer.billard.inner.domain.model.composites;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import com.schneide.softwerkskammer.billard.inner.domain.model.basic.Player;
+import com.schneide.softwerkskammer.billard.inner.domain.model.primitives.Player;
 
 public class Players implements Iterator<Player> {
 

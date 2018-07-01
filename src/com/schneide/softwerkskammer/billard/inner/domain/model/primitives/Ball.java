@@ -1,4 +1,4 @@
-package com.schneide.softwerkskammer.billard.inner.domain.model.basic;
+package com.schneide.softwerkskammer.billard.inner.domain.model.primitives;
 
 public final class Ball {
 

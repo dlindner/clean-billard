@@ -1,6 +1,6 @@
-package com.schneide.softwerkskammer.billard.inner.domain.engine.rules;
+package com.schneide.softwerkskammer.billard.inner.domain.model.rules;
 
-import com.schneide.softwerkskammer.billard.inner.domain.model.composite.Players;
+import com.schneide.softwerkskammer.billard.inner.domain.model.composites.Players;
 
 public enum NextPlayer {
 

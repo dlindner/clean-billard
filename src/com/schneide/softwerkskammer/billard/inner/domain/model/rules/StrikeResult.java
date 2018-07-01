@@ -1,4 +1,4 @@
-package com.schneide.softwerkskammer.billard.inner.domain.engine.rules;
+package com.schneide.softwerkskammer.billard.inner.domain.model.rules;
 
 public interface StrikeResult {
 
